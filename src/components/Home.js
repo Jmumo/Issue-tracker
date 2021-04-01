@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchrepos } from "../actions/fetchRepos";
 import github_data from "../constants/const.js";
@@ -20,7 +20,7 @@ export default function Home() {
   const getrepos = (e) => {
     e.preventDefault();
      getRepoAction(username, key);
-    console.log(key, username);
+    
   };
 
   const handleClick = (e) => {
@@ -123,12 +123,14 @@ export default function Home() {
             <tbody>
               {data
                 .filter((issues) => {
-                  if (search == "") {
+                  if (search === "") {
                     return issues;
                   } else if (
                     issues.title.toLowerCase().includes(search.toLowerCase())
-                  ) {
+                  ){
                     return issues;
+                  }else{
+                    return issues
                   }
                 })
                 .map((issues) => (
