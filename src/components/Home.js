@@ -13,14 +13,11 @@ export default function Home() {
 
   const dispatch = useDispatch();
 
-  const getRepoAction = (username,key) => dispatch(fetchrepos(username,key));
-
-
+  const getRepoAction = (username, key) => dispatch(fetchrepos(username, key));
 
   const getrepos = (e) => {
     e.preventDefault();
-     getRepoAction(username, key);
-    
+    getRepoAction(username, key);
   };
 
   const handleClick = (e) => {
@@ -127,10 +124,10 @@ export default function Home() {
                     return issues;
                   } else if (
                     issues.title.toLowerCase().includes(search.toLowerCase())
-                  ){
+                  ) {
                     return issues;
-                  }else{
-                    return issues
+                  } else {
+                    return null;
                   }
                 })
                 .map((issues) => (
