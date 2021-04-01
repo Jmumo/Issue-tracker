@@ -60,7 +60,7 @@ export default function Home() {
       <div className="col-md-4 d-flex flex-grow-column">
         <div className="card col-md-8 mt-3 ">
           <p className="lead text-capitalize">repositories</p>
-          <span className="small text-info"> select a repository</span>
+
           <hr></hr>
           <form onSubmit={getrepos}>
             <input
@@ -81,6 +81,10 @@ export default function Home() {
               Fetch
             </button>
           </form>
+          <hr></hr>
+          <span className="small text-info">
+            select a repository to view issues
+          </span>
           <hr></hr>
           <div>
             {repositories.map((repo) => (
